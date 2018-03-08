@@ -6,7 +6,7 @@ setInterval(function() {
   if (isBlue) {
     body.style.background = "white";
   } else {
-    body.style.background = "#3498db";
+    body.style.background = "pink";
   }
   isBlue = !isBlue;
 }, 1000);
