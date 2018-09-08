@@ -8,5 +8,6 @@ setInterval(function() {
   } else {
     body.style.background = "blue";
   }
-  isBlue = !isBlue;
+dsdisBlue = !isBlue;
 }, 1000);
+//
