@@ -1,0 +1,10 @@
+CONDICIONAL TERNÁRIO
+
+Condição ? true: false;
+
+ESCOPO DE VARIÁVEIS
+    **Variaveis criadas sem o var são Variaveis globais
+    ou seja pode ser acessado de qualquer lugar, mesmo que se for criada dentro
+    de uma função.
+    
+

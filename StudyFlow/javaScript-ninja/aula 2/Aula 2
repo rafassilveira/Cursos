@@ -1,0 +1,45 @@
+OPERADORES LOGICOS
+    var === "algo"
+    var === "algo" and var== algo
+
+OPERADORES UNARIO
+
+UNARIO +
+    Para transforma em numero
+
+        3+3=6;
+        +'3' = 3 // dessa forma o sinal de + transforma o '3' que é um string para um número.
+        + "RAFAEL" = NaN // transforma a frase em tipo numero em NaN
+
+    Para concatenar
+        "Rafa" + "el" = "Rafael" // Dessa forma ele vai juntar as duas partes.
+        3 + '3'= '33' //transforma em string e concatena e não soma.
+
+UNARIO -
+
+    var x = 3;
+    -x = -3\\ Apenas muda o sinal do numero,mas nao muda de forma permanente o valor da variavel
+    \\ diferente de --x que diminiu de forma permanente o valor da variavel,
+    -'3'= -3  \\ transformaem numero e muda o sinal.
+
+
+ESTRUTURA LEXICA
+
+    SENSITIVE
+        *O js faz diferenciação com letra maiúscula
+    
+    COMETÁRIOS
+        -lINHA //
+        -Bloco
+    IDENTIFICADORES
+        -Pode
+            * _
+            * $
+            * 0 - 9
+            * a - z
+            * A - z 
+
+    
+            
+
+
