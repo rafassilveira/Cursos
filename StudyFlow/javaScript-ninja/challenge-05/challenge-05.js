@@ -55,60 +55,71 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(arg1) { 
+function book(bookName) { 
         var  livro = {
-            livro1:{
+            'livro1':{
                 quantidadePaginas:30,
                 autor:'JK',
                 editora:"Leya"
             },        
-            livro2: {
+            'livro2': {
             quantidadePaginas: 40,
             autor: 'JK2',
             editora: "Leya2"
             },
-            livro3: {
+            'livro3': {
             quantidadePaginas: 50,
             autor: 'JK3',
             editora: "Leya3"
             },
         }
+
+        return !bookName ? livro: livro[bookName] // !bookName é igual bookNmae !== undefined
         
-        if (arg1) {
-            return arg1
-            
-        }else{
-            return livro
-        }
-       
-   
+        
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-> book(livro)
-{ HarryPotter: { quantidadePaginas: 30, autor: 'JK', editora: 'Leya' },
-  livro2: { quantidadePaginas: 40, autor: 'JK2', editora: 'Leya2' },
-  livro3: { quantidadePaginas: 50, autor: 'JK3', editora: 'Leya3' } }
->
+> console.log(book()) {
+  livro1: {
+    quantidadePaginas: 30,
+    autor: 'JK',
+    editora: 'Leya'
+  },
+  livro2: {
+    quantidadePaginas: 40,
+    autor: 'JK2',
+    editora: 'Leya2'
+  },
+  livro3: {
+    quantidadePaginas: 50,
+    autor: 'JK3',
+    editora: 'Leya3'
+  }
+}
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-
+> console.log("O livro livro2 tem " + book('livro2').quantidadePaginas +
+  " páginas!")
+O livro livro2 tem 40 páginas!
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+> console.log("O autor do  livro2 é " + book('livro2').autor)
+O autor do livro2 é JK2
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
-*/
+> console.log("O livro livro3 foi publicado por " + book('livro2').editora)
+O livro livro3 foi publicado por Leya2
 // ?
