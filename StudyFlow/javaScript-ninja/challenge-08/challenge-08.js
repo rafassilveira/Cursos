@@ -41,7 +41,7 @@ var varShowName = showName
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
-*/console.log("A função " +varShowName.name+ " retorna "+ varShowName() + "".")
+*/console.log("A função " +varShowName.name+ " retorna "+ varShowName() + ".")
 
 
 /*
@@ -99,12 +99,12 @@ function calculator(op) {
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-var sum =calculator(+)
+var sum =calculator("+")
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-> sum("+")(10, 2)
+> sum(10, 2)
 'Resultado da operação:10+2= 12'
 
 /*
@@ -112,23 +112,20 @@ Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e ` `, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-  subtraction = calculator('-')
-  multiplication = calculator('*')
-  division = calculator('/')
-    
-  mod = calculator('%')
+  subtraction = calculator('-'),
+  multiplication = calculator('*'),
+  division = calculator('/'),    
+  modd = calculator('%'),
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-> mod(10, 2)
-'Resultado da operação:10%2= 0'
 
- subtraction(10, 2)
- 'Resultado da operação:10-2= 8'
+ console.log(subtraction(10, 2))
+ 
 
-  division(10, 2)
-  'Resultado da operação:10/2= 5'
-  mod(10, 2)
-  'Resultado da operação:10%2= 0'
+  console.log(division(10, 2))
+  
+  console.log(modd(10, 2))
+  
