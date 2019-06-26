@@ -24,4 +24,17 @@ typeof 'JS Ninja';// string
 //Idela é usar para valores primitivos
 
 
- 
+ function calculator(op) {
+   if (operation[op] !== undefined ) {
+     return function (a,b) {
+        if (a == Number && b == Number) {
+          return operation[op](a,b)
+        }       
+       }
+       
+     }else
+      return false
+     
+   }
+   
+ }
