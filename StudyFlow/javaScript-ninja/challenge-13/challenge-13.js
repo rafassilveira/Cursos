@@ -1,73 +1,91 @@
-/*
-Envolva todo o código desse desafio em uma IIFE.
-*/
+(function () {
 
-/*
+    /*
 Crie um array e mostre no console a representação em String desse array,
 usando o método visto na aula 13.
 */
-console.log( 'O array em formato de string é:' );
-// ?
-
+    console.log('O array em formato de string é:');
+    
+    arr = [1,2,3,5,6]
+    console.log(arr.toString());
+    
 /*
 Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
 Cada array deve conter os estados dessa região.
 */
-// ?
+    sul =['SC','RS','PR']
+    sudeste =['SP','MG','RJ']
 
 /*
 Crie uma variável chamada `brasil`, que irá receber as duas regiões
 concatenadas. Mostre o `brasil` no console.
 */
-console.log( '\nAlguns Estados do Brasil:' );
-// ?
+console.log('\nAlguns Estados do Brasil:');
+
+var brasil =[];
+brasil = brasil.concat(sul, sudeste)
+
+console.log(brasil);
 
 /*
 Adicione 3 novos estados da região Norte no início do array e mostre no console.
 */
-console.log( '\nMais estados adicionados:' );
-// ?
+console.log('\nMais estados adicionados:');
+
+console.log(brasil.unshift('AM','AC','RR'));
+console.log(brasil);
 
 /*
 Remova o primeiro estado do array `brasil` e mostre-o no console.
 */
-console.log( '\nEstado removido:' );
-// ?
+console.log('\nEstado removido:');
+
+console.log(brasil.shift());
+console.log(brasil);
 
 /*
 Crie um novo array chamado `newSul`, que receba somente os estados do sul,
 pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
-// ?
+
+var newSul =brasil.slice(2,5)
 
 /*
 Mostre no console os estados que estão em `newSul`.
 */
-console.log( '\nEstados do Sul do Brasil:' );
-// ?
+console.log('\nEstados do Sul do Brasil:');
+console.log(newSul);
 
 /*
 Mostre no console todos os estados que estão em `brasil`.
 */
-console.log( '\nAlguns Estados do Brasil:' );
-// ?
+console.log('\nAlguns Estados do Brasil:');
+
+console.log(brasil);
 
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-// ?
+var nordeste =['BA','PB','PE','CE','MA','AL','SE']
 
 /*
 Mostre no console os estados do nordeste.
 */
-console.log( '\nEstados do Nordeste:' );
-// ?
+console.log('\nEstados do Nordeste:');
+
+console.log(nordeste);
 
 /*
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-// ?
+
+    
+    
+})();
+
+
+
 
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
