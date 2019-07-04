@@ -69,7 +69,7 @@ arr.forEach(function (item, index,array) {
 //every: Serve para testar cada item no array, se todos tiveram a condição estabelicida
 // então retornará true senão false
 
-// verifica e atribui para variavel se todos os item da arrya são menos que 5
+// verifica e atribui para variavel se "todos" os item da arrya são menos que 5
 var every = arr.every(function (item) {
     console.log(item)
 
@@ -98,7 +98,7 @@ var map = arr.map(function (item, index, arrya) {
   console.log(arr ,map);
   
 
-  //filter: paraceidor com o map, pecorre a array e traz somente os item na condições passada
+  //filter: parecido com o map, pecorre a array e traz somente os item na condições passada
 
   // retornar somente itens da array maiores que 2
   var filter = arr.filter(function (item, index, array) {  
