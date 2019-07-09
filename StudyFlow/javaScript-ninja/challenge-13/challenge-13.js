@@ -170,7 +170,7 @@ objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-//incompleto
+
 var map = newBrasil.map(function(item,id) {
     //versão do professor
     return {

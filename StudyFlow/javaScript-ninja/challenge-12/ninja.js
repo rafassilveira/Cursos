@@ -72,7 +72,7 @@ console.log('Minha familia é: ', arr.join(', '));
 //inverte a ordem dos itens da array, 1,2,3 > 3,2,1 modifica o array
 console.log(arr.reverse());
 //ordena o array em orde
-m alfabetica modifica o array
+// alfabetica modifica o array
 console.log(arr.sort());
 
 
