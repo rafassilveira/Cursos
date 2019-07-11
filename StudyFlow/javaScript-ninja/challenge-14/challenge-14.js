@@ -117,7 +117,66 @@ console.log(inversedName);
 Mostre no console o array `numberObjects`.
 */
 console.log('\nNumber objects');
-// ?
+console.log(numberObjects);
+
+
+/*
+Verifique se existem em algum índice de numberObjects um objeto ìgual a
+{ number: 2 }. Se houver, mostre no console:
+- "Existe um objeto { number: 2 } em numberObjects!"
+Senão, mostre a frase:
+- "Não existe um objeto { number: 2 } em numberObjects :("
+Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
+o que acontece ;)
+*/
+console.log( '\nExiste um { number: 2 } em numberObjects?' );
+//Objetossão passadas como referencia, e nã sao copiados
+//por mais que eu crie dois objetos iguais, eles irão ocupar espaços diferentes na memoria
+//Por isso ao comparar os objetos será sempre false, 
+if (numberObjects.indexOf({number:2}) >- 1) {
+    console.log("Existe um objeto { number: 2 } em numberObjects!");
+    }
+  
+    else {
+      console.log("Não Existe um objeto { number: 2 } em numberObjects!");
+    }
+  ;
+ 
+
+
+
+/*
+Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
+será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
+*/
+console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
+if (numberObjects.lastIndexOf({number:2}) >- 1) {
+    console.log("Existe um objeto { number: 2 } em numberObjects!");
+    }
+  
+    else {
+      console.log("Não Existe um objeto { number: 2 } em numberObjects!");
+    }
+  ;
+ 
+console.log(teste);
+
+
+/*
+Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
+formato de String.
+*/
+console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
+
+if (Array.isArray(justMod2Or3)) {
+
+    console.log(justMod2Or3.toString());
+    
+}
+ 
+
+
+
 
 
 })();//fim IIFE
@@ -134,28 +193,5 @@ console.log('\nNumber objects');
 
 
 
-/*
-Verifique se existem em algum índice de numberObjects um objeto ìgual a
-{ number: 2 }. Se houver, mostre no console:
-- "Existe um objeto { number: 2 } em numberObjects!"
-Senão, mostre a frase:
-- "Não existe um objeto { number: 2 } em numberObjects :("
-Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
-o que acontece ;)
-*/
-console.log( '\nExiste um { number: 2 } em numberObjects?' );
-// ?
 
-/*
-Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
-será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
-*/
-console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-// ?
 
-/*
-Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
-formato de String.
-*/
-console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-// ?
