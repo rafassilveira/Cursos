@@ -1,8 +1,8 @@
-/*
+(function () {
+  /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
 */
-
 /*
 Crie uma função construtora chamada "Person". Esse construtor deve ter
 as seguintes características:
@@ -21,7 +21,33 @@ as seguintes características:
   adicionados à idade original (age). Esse método deverá retornar o objeto
   que será instanciado.
 */
-// ?
+//incompleto
+function Person (name, lastName,age) { 
+  this.name = name;
+  this.lastName = lastName;
+  this.age = age;
+      this.getFullName = function () {
+
+        return person.name + " " + person.lastName
+
+      }
+ }
+
+ var person = new Person('rafael','silveira',30)
+
+  /*person.getFullName = function () {
+    
+    return person.name + " " + person.lastName
+    
+  }*/
+
+ console.log(person.getFullName());
+ 
+
+})(); //fim IIFE
+
+
+
 
 /*
 Crie 3 novos objetos usando o construtor acima. Os objetos serão novas
