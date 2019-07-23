@@ -31,7 +31,7 @@ console.log(arr);
 console.log(arr.slice(0,0));//mostra nada
 console.log(arr.slice(0, 1))// mostra somente o primeiro item
 console.log(arr.slice(2, 4)) // mostra o terceiro item [2] e mostra antes do quinto item
-console.log(arr.slice( -2))// mostra os dpos ultimos
+console.log(arr.slice( -2))// mostra os dois ultimos
 
 //splice
 //ele modifica , adciona e remove do array
