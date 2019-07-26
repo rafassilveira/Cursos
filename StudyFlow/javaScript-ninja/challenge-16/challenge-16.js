@@ -19,10 +19,10 @@ console.log('As letras do seu nome:');
 var name = 'Rafael'
 
 for (let i = 0; i< name.length; i++) {
-   var  pos = i+1
-  console.log(name.charAt(i) +" é a " + pos+"º letra do meu nome"  );
+   
+  console.log(name.charAt(i) +" é a " + (i+1)+"º letra do meu nome"  );
   
-    }
+}
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -38,12 +38,29 @@ console.log para cada formato.
 */
 console.log('\nNome convertido à partir de um slug:');
 
-var fullName = 'rafael-silveira'
-var size = fullName.length;
-var traco = fullName.indexOf('-')
-var newFullName = fullName.charAt(0).toLocaleUpperCase() + fullName.slice(1,traco);
-newFullName +=" " + fullName.charAt(traco+1).toLocaleUpperCase() + fullName.slice(traco+2,size+1);
-console.log(fullName + " " + newFullName);
+// var fullName = 'rafael-silveira'
+// var size = fullName.length;
+// var traco = fullName.indexOf('-')
+// var newFullName = fullName.charAt(0).toLocaleUpperCase() + fullName.slice(1,traco);
+// newFullName +=" " + fullName.charAt(traco+1).toLocaleUpperCase() + fullName.slice(traco+2,size+1);
+// console.log(fullName + " " + newFullName);
+
+/* --VERSÃO DO PROFESSOR--*/
+var fullName = 'rafael-dos-santos-silveira'
+/*plit vai retirar o '-' e retornar um array, que ficará na nova var
+ o map irá pecorrer por todos os item da array,
+adcionado um funcao com o paremtro name, todos os item da array serão acessadis atraves do 'name'
+usando o charArt(i), onde o 'i' é a posicao ira ficar em maisculo a primeira letra de cada nome
+ O slice ira cortar do segundo indice em diante
+sinal de '+' ira concatenar com o resto do nome*/
+var newFullName = fullName.split('-').map(function (name) {  
+    return name.charAt(i).toLocaleUpperCase() + name.slice(1);
+});
+console.log(fullName);
+console.log(newFullName.join(' '));// irá juntar todos os itens,agora sem o traço, com espaçoes entre eles
+
+
+
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -56,11 +73,21 @@ O resultado final deve ficar mais ou menos assim:
 */
 console.log('\nMeus amigos:');
 
-var amigos = ['Bulma','Pam','Cinho','Hud','Fred']    
-    amigos = amigos.join(',')
-var ind    = amigos.lastIndexOf(',')
-    
-console.log();
+
+/* --VERSÃO DO PROFESSOR--*/
+var friends = ['Bulma', 'Pam', 'Cinho', 'Hud', 'Fred']
+//Reduce irá reduzi tudo em um unica string separado por ','
+//reduce passar pela array friends o parametro:
+//acumulado: inicia em 0, e vai recebendo conforme passar pela array
+// atual: é o item atual no momento do loop, nesse caso ele irá concatenar '+', e salvo no acumulador
+var phrase = friends.reduce(function (acumulado, atual, index) { 
+    //se p indice for igual ao tamanho do array ele colocar 'e', senao ','
+    var separator = friends.length -1 === index ? ' e ' : ',';
+    return acumulado + separator + atual;
+    //como reduce retornar uma string, pode ser usado o concat
+ }).concat(' São meus amigos');
+ console.log(phrase);
+ 
 
 
 /*
@@ -77,7 +104,7 @@ Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log('\nParte de uma string:');
-console.log('Fernando'.substring(3));
+console.log('Fernando'.substring(8,3));
 
 
 /*
@@ -92,15 +119,32 @@ Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 console.log('\nNome com letras intercaladas entre caixa alta e baixa:');
 
 var myName = 'Rafael'
+var newmyName = '' 
 for(var i = 0; i < myName.length; i++ ){
-    if (i % 2 ==0 ) {
-        myName += myName.charAt(i).toUpperCase()
+    if (i % 2 ===0 ) {
+        
+        newmyName = newmyName + myName.charAt(i).toUpperCase()
+        
+         
         
     }else{
-        myName +=myName.charAt(i).toLowerCase()
+         newmyName =newmyName + myName.charAt(i).toLowerCase() 
     }
 }
-console.log(myName);
+console.log(newmyName);
+
+/*
+--VERSÃO DO PROFESSOR-- 
+
+var myName = 'Rafael';
+var myNewName = [];
+for( var i = 0, len = myName.length; i<len; i++) {
+    myNewName.push( i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toLocaleUpperCase() );
+    
+};
+console.log(myNewName.join(''));
+*/
+
 
 
 
