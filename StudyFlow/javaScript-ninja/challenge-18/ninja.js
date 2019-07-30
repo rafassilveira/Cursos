@@ -21,6 +21,10 @@ Metodos:
         \d: numeros(digitos)
             ex:exemplo.match(/\d/g);//Traz todos os numeros(um digito), dá variável exemplo.
                exemplo.match(/\d\d/g) //Traz todos os numeros(2 digitos), dá variável exemplo.
+        \s: Espaços em brancos
+        \n:Vai dar match com a quebra de linha
+        \t:Vai dar match com tabulação(espaços em TAB)
+        .(PONTO):Pega todas as letras que são quebra de linhas
     Classes de Caracteres /Listas:
         '|' (pipe) :Usado com 'ou' nas espressões
         exe: /a|b/ // encontre 'a' ou 'b'
@@ -53,7 +57,36 @@ Metodos:
          //irá capturar todas as letras e duas capturar e para cada uma ficara armazenadas
          // em variaves diferentes,letra,letra2, depois concatena e uma deixa maisucula e outra minuscula
 
+    Negação:
+        [^abc] - ^(circunflexo, significa negação) traz todos menos o abc(juntos e nessa ordem)
+        \W (dáblio miúsculo)-Faz match qualquer caractere menos os alfanumericos
+        \D (maiusculo) - qualquer caratere menos os digitos
+        \S (maiusculo) - qualquer caracter menos os espacos em branco
+        EX:[\S\s] - Irá dar match em todos os carecteres
+    Repetidores:
+        {n,m} -Intervalo = Item anterior ao menos 'n' vezes, e no maximo 'm' vezes
+            ex: /\d{2,4}/g - Irá retonar numeros com no minimo 2 digitos e no maximo 4
+        {n,}-intervalo aberto = retonar todas que atendem no minimo
+            ex: /\d{2,}/g = Irá retonar numeros com no minimo 2 digitos
+        {n} - Intervalo exato
+             ex: /\d{2}/g = Irá retonar exatamente numeros com no 2 digitos (caso tenha mais, ele dá 2 matcthes)
+        ? - opcional :
+            ex: /\w\d?/g : Irá trazer todos os carecteres e o digito é opcionald, se tiver blz.
+        + (Sinal de mais ) - Uma ou mais ocorrencia do item anterior
+            ex: /\w + \s/g - Traz todos os cacerteres seguido de espaço 
+                /\s+\w/- traz espaço seguido de letra
+        * (asterisco)- zero ou mais ocorrencias do item anterior
+            ex:
+        
 
+
+
+
+
+
+        
+
+        
 
 
 

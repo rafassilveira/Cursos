@@ -1,29 +1,53 @@
-/*
-1. Envolva todo o conteúdo desse desafio em uma IIFE.
-2. Adicione a diretiva 'use strict';
-3. Crie um arquivo index.html e adicione esse script à ele.
-*/
+(function () {
+    'use strict'
+    /*
+    1. Envolva todo o conteúdo desse desafio em uma IIFE.
+    2. Adicione a diretiva 'use strict';
+    3. Crie um arquivo index.html e adicione esse script à ele.
+    */
+    /*
+ Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
+ retorne esse CPF limpo (somente os números).
+ Usando os CPFs abaixo, mostre no console que a limpeza funciona para todos
+ eles! Use um console.log para cada CPF.
+ - "049-214 3421-1"
+ - "210.458.522-05"
+ - "735 500 794 - 22"
+ - "101.123-131x32"
+ */
+    console.log('Limpando CPFs:');
 
-/*
-Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
-retorne esse CPF limpo (somente os números).
-Usando os CPFs abaixo, mostre no console que a limpeza funciona para todos
-eles! Use um console.log para cada CPF.
-- "049-214 3421-1"
-- "210.458.522-05"
-- "735 500 794 - 22"
-- "101.123-131x32"
-*/
-console.log( 'Limpando CPFs:' );
-// ?
+function cleanCPF(cpf) {
+    
+    //O match traz em array o que são "/d" digitos e o join os junta sem espaço
+    return cpf.match(/\d/g).join("") ;
+     
+  }
+console.log(cleanCPF("049-214 3421-1"));
+console.log(cleanCPF("049-214 3421-1"));
+console.log(cleanCPF("735 500 794 - 22"));
+console.log(cleanCPF("101.123-131x32"));
+
+
+
+
+
+
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
-console.log( '\nFormatando CPFs corretamente:' );
-// ?
+/*Incompleto */
+console.log('\nFormatando CPFs corretamente:');
+console.log(cleanCPF("101.123-131x32").match(/\d{3}/g).join('.').concat('-'))
+
+
+
+  })();// fim IIFE
+
+
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
