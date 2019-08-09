@@ -23,11 +23,26 @@ function cleanCPF(cpf) {
     return cpf.match(/\d/g).join("") ;
      
   }
-console.log(cleanCPF("049-214 3421-1"));
-console.log(cleanCPF("049-214 3421-1"));
-console.log(cleanCPF("735 500 794 - 22"));
-console.log(cleanCPF("101.123-131x32"));
 
+ /*
+  Versão do professor
+  function cleanCPF(cpf) {
+    //troca tudo aquilo que não é numero por ""
+    return confirm.replace(\/D\g, "")
+    }
+
+  */
+ var cpfs = [
+   '049 - 214 3421 - 1 ',
+    "735 500 794 - 22",
+     "735 500 794 - 22",
+    "101.123-131x32"
+ ]
+   cpfs.forEach(cpf => {
+     console.log(cleanCPF(cpf));
+     
+     
+   });
 
 
 
@@ -47,6 +62,29 @@ function cpfCorreto(param) {
   return param.match(/\d{3}/g).join('.').concat('-') + param.slice(-2)
  }
   console.log(cpfCorreto(cleanCPF("049-214 3421-1")))
+  /*
+    Versão do professor
+    Versão 1
+     cpfs.forEach(cpf => {
+       console.log(cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,
+         '$1.$2.$3-$4'));
+
+     });
+
+     Versão 2
+       cpfs.forEach(cpf => {
+             console.log(cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,
+               function (regex, cap1, cap2, cap3, cap4) {
+                 return cap1 + '.' + cap2 + "." + cap3 + '-' + cap4;
+               }));
+    
+   */
+
+
+
+
+
+
 
   /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -62,9 +100,10 @@ O resultado deve ser:
   console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
 // 
 
-/*INCOMPLETO */
-var mes ="Os meses de janeiro, junho e julho começam com a letra j.".match(
-  /junho|julho/g);
+
+console.log("Os meses de janeiro, junho e julho começam com a letra j.".match(/ju[nl]ho/g));
+
+ 
   
   
 /*
@@ -80,7 +119,7 @@ console.log('\nMatch com a abertura de uma tag HTML:');
 
 console.log(
   "<div><section><blockquote>Texto <img /></blockquote></section></div>".match(
-  /\<(\w+)\>/g));
+  /\<\w+\>/g));
 
  
 /*
@@ -92,10 +131,10 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
-//incompleto
+
 console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
 console.log("<div><ul><li></li><li></li><li><span></span></li></ul></div>"
-.match(/(\<\w+\>)(\<\/\w+\>)/g));
+.match(/<\w+><\/\w+>/g));
 
 
 /*
@@ -122,12 +161,22 @@ corretas, para depois aplicar no código ;)
 */
 console.log('\nFazer replace dos textos das tags:');
 
-
 console.log(
-   "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
-   .replace(/(\<\w+\>)(\<\/\w+\>)/g, function (regex,cap1) {
-     return cap1 + "dsadsadad"
-     }));
+  "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+  .replace(/<(\w+)>(.+)<\/\w+><(\w+)>(.+)<\/\w+><(\w+)>(.+)<\/\w+>/g,
+    '<$1>o texto da $1 $2</$1> \n <$3>o texto da $3 $4</$3> \n <$5>o texto da $5 $6</$5>')
+  );
+
+/*
+Versão do professor
+console.log(
+  "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+  .replace(/<(\w+)>([^<]+)<\/\w+>/g,
+    '<$1>o texto da "$1" é $2</$1> \n '
+  )
+);
+
+ */
 
 
   })();// fim IIFE
