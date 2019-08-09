@@ -39,17 +39,16 @@ Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
 Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
-/*Incompleto */
+
 console.log('\nFormatando CPFs corretamente:');
-console.log(cleanCPF("101.123-131x32").match(/\d{3}/g).join('.').concat('-'))
 
+function cpfCorreto(param) { 
+  //agrupa de 3 em 3 junta com o ponto e concatena com - mais dois ultimos itens
+  return param.match(/\d{3}/g).join('.').concat('-') + param.slice(-2)
+ }
+  console.log(cpfCorreto(cleanCPF("049-214 3421-1")))
 
-
-  })();// fim IIFE
-
-
-
-/*
+  /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
 usando o mínimo de caracteres possíveis na regex.
 Para garantir que a regex funciona, teste-a usando o método match. Se houver
@@ -60,9 +59,14 @@ Mostre no console o resultado do match para a frase:
 O resultado deve ser:
 ["junho", "julho"]
 */
-console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-// ?
+  console.log('\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":');
+// 
 
+/*INCOMPLETO */
+var mes ="Os meses de janeiro, junho e julho começam com a letra j.".match(
+  /junho|julho/g);
+  
+  
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
 HTML qualquer.
@@ -72,9 +76,13 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
-console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
+console.log('\nMatch com a abertura de uma tag HTML:');
 
+console.log(
+  "<div><section><blockquote>Texto <img /></blockquote></section></div>".match(
+  /\<(\w+)\>/g));
+
+ 
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
 com a abertura e fechamento da tag.
@@ -84,8 +92,11 @@ Use o método match e faça o teste com a marcação abaixo:
 O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
-console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// ?
+//incompleto
+console.log('\nMatch com tags HTML vazias (abertura e fechamento da tag):');
+console.log("<div><ul><li></li><li></li><li><span></span></li></ul></div>"
+.match(/(\<\w+\>)(\<\/\w+\>)/g));
+
 
 /*
 Vamos complicar um pouco agora :D
@@ -109,5 +120,22 @@ Uma dica: faça o match aos poucos. Para facilitar o teste, use o site
 https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
-console.log( '\nFazer replace dos textos das tags:' );
-// ?
+console.log('\nFazer replace dos textos das tags:');
+
+
+console.log(
+   "<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>"
+   .replace(/(\<\w+\>)(\<\/\w+\>)/g, function (regex,cap1) {
+     return cap1 + "dsadsadad"
+     }));
+
+
+  })();// fim IIFE
+
+
+
+
+
+
+
+
