@@ -60,7 +60,7 @@ console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
 Vamos criar um método que vai testar se uma classe CSS existe em uma
 marcação HTML.
 - Primeiro, crie uma função chamada `hasClass`;
-- Essa função receberá dois parâmetros: o primeiro chamado `markup`, que
+- Essa função receberá dois parâmetros: o primeiro chamado `markup;`, que
 será a marcação HTML testada, e o segundo `cssClass`, que será a classe que
 iremos testar;
 - A função deve retornar `true` se a classe existir na marcação e `false`
@@ -80,7 +80,11 @@ qualquer classe que for testada. Os dados passados no exercício são somente
 para exemplificar.
 */
 var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
-console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
-// ?
-teste
-teste
+console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' )
+
+function hasClass(markup,cssClass){
+	var regExp = new RegExp (cssClass, 'g')
+	
+	return regExp.test(markup)
+}
+
