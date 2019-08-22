@@ -38,7 +38,7 @@ console.log(regex.test(email));
 - Selecione o input de "Nome", atribuindo-o à uma variável chamada
 `$inputUsername`.
 */
-var $inputUsername =doc.getElementsByTagName('input')
+var $inputUsername = doc.querySelector('input[type = text]')
 console.log($inputUsername);
 
 /*
@@ -46,17 +46,34 @@ console.log($inputUsername);
 `$inputEmail`.
 */
 
-var $inputEmail = doc.querySelectorAll('input[type = email]')
+var $inputEmail = doc.querySelector('input[type = email]')
 
 console.log($inputEmail);
 
-/*
+/*  INCOMPLETO
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-var $message = doc.querySelectorAll('label[type = mensagem]')
+var $message = doc.getElementsByName('mensagem')
 
 console.log($message);
+
+/*
+- Selecione o botão de envio do formulário, atribuindo-o à uma variável
+chamada `$button`.
+*/
+var $button = doc.getElementsByTagName('button')
+
+console.log($button);
+
+/*
+Preencha os campos de "Nome" e "Email" que estão no documento com os valores
+entrados pelo usuário.
+*/
+
+
+$inputUsername.value =username;
+$inputEmail.value =email;
 
 
 })(window, document);
@@ -68,17 +85,8 @@ console.log($message);
 
 
 
-/*
-- Selecione o botão de envio do formulário, atribuindo-o à uma variável
-chamada `$button`.
-*/
-// ?
 
-/*
-Preencha os campos de "Nome" e "Email" que estão no documento com os valores
-entrados pelo usuário.
-*/
-// ?
+
 
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
