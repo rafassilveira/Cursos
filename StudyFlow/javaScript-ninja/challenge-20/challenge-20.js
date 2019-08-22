@@ -75,17 +75,30 @@ entrados pelo usuário.
 $inputUsername.value =username;
 $inputEmail.value =email;
 
+$inputUsername.addEventListener('click', function(event) {
+    if ($inputUsername.value==="") {
+        alert("Preencha o nome do usuário!")
+        
+    }
+},false)
+    function isValidEmail(email) {
+        var regex = new RegExp('\\w+@\\w+.com?\\w+')
+        return regex.test(email);
 
-})(window, document);
+      }
 
+    $inputEmail.addEventListener('click', function(event) {
+        if ($inputEmail.value === "" | isValidEmail($inputEmail.value)== false) {
+            alert("Preencha o e-mail!")
+        
+    }
 
+},false)
 
-
-
-
-
-
-
+    $button.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("Tem certeza que deseja enviar o formulário?")
+    },false)
 
 
 /*
@@ -113,6 +126,23 @@ Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
 // ?
+
+
+
+
+
+})(window, document);
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
