@@ -80,27 +80,6 @@ entrados pelo usuário.
 
 $inputUsername.value =username;
 $inputEmail.value =email;
-
-$button.addEventListener('click', function(event) {
-	event.preventDefault()
-    if (!$inputUsername.value) 
-        alert("Preencha o nome do usuário!")
-	if (!$inputEmail.value)
-		alert("Preencha o e-mail")
-	if(!$message)
-		alert("preencha a mensagem")
-	if(!isValidEmail($inputEmail.value))
-		return alert("Entre com um e-mail válido");
-	if (confirm("Tem certeza que deseja enviar?"))
-		return alert("Enviado com sucesso")
-		
-        
-    
-},false)
- 
-
-
-
 /*
 Adicione um listener de evento de click ao botão que faça o seguinte:
 1. Verificar se todos os campos estão preenchidos:
@@ -130,20 +109,24 @@ Caso contrário, mostre um alerta com a mensagem:
 
 
 
-
-})(window, document);
-
-
-
-
-
-
-
-
-
-
-
-
+$button.addEventListener('click', function(event) {
+	event.preventDefault();
+    if (!$inputUsername.value) 
+        alert("Preencha o nome do usuário!")
+	if (!$inputEmail.value)
+		alert("Preencha o e-mail")
+	if(!$message.value)
+		alert("preencha a mensagem")
+    if(!isValidEmail($inputEmail.value))
+        //console.log(isValidEmail($inputEmail.value))
+		return alert("Entre com um e-mail válido");
+	if (confirm("Tem certeza que deseja enviar?"))
+		return alert("Enviado com sucesso")
+		
+        
+    
+},false)
+ 
 /*
 Crie uma função chamada `isValidEmail`, que será usada na validação do
 envio do formulário.
@@ -171,3 +154,26 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+
+function isValidEmail(email) {
+    
+     return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test( email );
+}
+
+
+
+
+
+})(window, document);
+
+
+
+
+
+
+
+
+
+
+
+
