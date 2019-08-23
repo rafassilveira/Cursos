@@ -120,7 +120,8 @@ $button.addEventListener('click', function(event) {
     if(!isValidEmail($inputEmail.value))
         //console.log(isValidEmail($inputEmail.value))
 		return alert("Entre com um e-mail válido");
-	if (confirm("Tem certeza que deseja enviar?"))
+    if (!confirm("Tem certeza que deseja enviar?"))
+        return alert ("Não enviado")
 		return alert("Enviado com sucesso")
 		
         
