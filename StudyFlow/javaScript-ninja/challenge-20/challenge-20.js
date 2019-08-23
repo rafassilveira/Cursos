@@ -81,30 +81,24 @@ entrados pelo usuário.
 $inputUsername.value =username;
 $inputEmail.value =email;
 
-$inputUsername.addEventListener('click', function(event) {
-    if ($inputUsername.value==="") {
+$button.addEventListener('click', function(event) {
+	event.preventDefault()
+    if (!$inputUsername.value) 
         alert("Preencha o nome do usuário!")
+	if (!$inputEmail.value)
+		alert("Preencha o e-mail")
+	if(!$message)
+		alert("preencha a mensagem")
+	if(!isValidEmail($inputEmail.value))
+		return alert("Entre com um e-mail válido");
+	if (confirm("Tem certeza que deseja enviar?"))
+		return alert("Enviado com sucesso")
+		
         
-    }
+    
 },false)
-    function isValidEmail(email) {
-        var regex = new RegExp('\\w+@\\w+.com?\\w+')
-        return regex.test(email);
+ 
 
-      }
-
-    $inputEmail.addEventListener('click', function(event) {
-        if ($inputEmail.value === "" || isValidEmail($inputEmail.value)== false) {
-            alert("Preencha o e-mail!")
-        
-    }
-
-},false)
-
-    $button.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("Tem certeza que deseja enviar o formulário?")
-    },false)
 
 
 /*
