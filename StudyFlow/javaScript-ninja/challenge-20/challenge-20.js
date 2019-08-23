@@ -16,11 +16,17 @@ resultado à uma variável chamada `username`. Se o usuário não digitar um
 nome, `username` deve receber "Desconhecido".
 Com a resposta, mostre um alert com a mensagem "Bem vindo [USERNAME]!"
 */
+	
+/*O codigo abaixo faz com que ele verifica se p usuari digitou algo(V) Se não 
+Ele atribui automaticamente o 'Desconhecido', isso se chama curto circuito*/
+	
+var username = prompt("Qual o seu nome?")||'Desconhecido'
 
-var username = prompt("Qual o seu nome?")
-if (username==="") {
-    username ='Desconhecido'
-}
+	/*
+	 if (!username) 
+    	username ='Desconhecido'
+	*/
+
 alert("Bem Vindo " + username)
 
 /*
@@ -54,7 +60,7 @@ console.log($inputEmail);
 - Selecione o campo de "Mensagem", atribuindo-o à uma variável chamada
 `$message`.
 */
-var $message = doc.getElementsByName('mensagem')
+var $message = doc.querySelector('textarea')
 
 console.log($message);
 
@@ -62,7 +68,7 @@ console.log($message);
 - Selecione o botão de envio do formulário, atribuindo-o à uma variável
 chamada `$button`.
 */
-var $button = doc.getElementsByTagName('button')
+var $button = doc.querySelector('button')
 
 console.log($button);
 
@@ -88,7 +94,7 @@ $inputUsername.addEventListener('click', function(event) {
       }
 
     $inputEmail.addEventListener('click', function(event) {
-        if ($inputEmail.value === "" | isValidEmail($inputEmail.value)== false) {
+        if ($inputEmail.value === "" || isValidEmail($inputEmail.value)== false) {
             alert("Preencha o e-mail!")
         
     }
