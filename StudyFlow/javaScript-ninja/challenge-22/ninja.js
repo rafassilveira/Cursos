@@ -4,9 +4,9 @@
             Retorna o nome da função
             e não tiver retornar undefined
         .length
-            faz contagem, de string,caracteremtamanho de array, quantidade de parametros 
+            faz contagem, de string,caracteremtamanho de array, quantidade de parametros
             de uma função
-            Exemplo: 
+            Exemplo:
                 function myFunction(a, b, c) {
 
                 }
@@ -20,10 +20,10 @@
                  console.log(myFunction.toString()) //Retorna a funçao em string
         .call()
             Invoca a função imediatamente igual o '()', e também serve para dizer que é o
-            'this' 
+            'this'
             Exemplo:
                 Com o call, podemis escolher que será o 'this da função
-                no exemplo abaixo o this seria o obj2, que está sendo passado 
+                no exemplo abaixo o this seria o obj2, que está sendo passado
                 para o call.
                 (function () {
                   'use strict'
@@ -84,14 +84,10 @@
 
 
 
-
-
- */
-
  function myFunction() {
     Array.prototype.forEach.call(arguments, function (item,index) {
       console.log(item);
-      
+
       })
    }
    myFunction(1,2,3,5,6)
@@ -103,4 +99,8 @@
       })
     }
     myFunction(1, 2, 3, 5, 6)
+
+
+ */
+
 
