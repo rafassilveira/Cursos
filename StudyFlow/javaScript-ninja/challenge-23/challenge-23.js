@@ -23,3 +23,89 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+(function (win,doc) {
+
+ let $calculadora = doc.querySelector('[data-js="calculadora"]');
+ let $zero = doc.querySelector('[data-js="zero"]');
+ let $one = doc.querySelector('[data-js="one"]');
+ let $two = doc.querySelector('[data-js="two"]');
+ let $three = doc.querySelector('[data-js="three"]');
+ let $four = doc.querySelector('[data-js="four"]');
+ let $five = doc.querySelector('[data-js="five"]');
+ let $six = doc.querySelector('[data-js="six"]');
+ let $seven = doc.querySelector('[data-js="seven"]');
+ let $eigth = doc.querySelector('[data-js="eigth"]');
+ let $nine = doc.querySelector('[data-js="nine"]');
+ let $plus = doc.querySelector('[data-js="plus"]');
+ let $sub = doc.querySelector('[data-js="sub"]');
+ let $multi = doc.querySelector('[data-js="multi"]');
+ let $div = doc.querySelector('[data-js="div"]');
+ let $equal = doc.querySelector('[data-js="equal"]');
+ let $clear = doc.querySelector('[data-js="clear"]');
+
+
+var resultado =''
+
+
+
+ $zero.addEventListener('click', function () {
+   resultado=resultado+0
+   $calculadora.value = $calculadora.value + 0
+ }, false)
+ $one.addEventListener('click',function () {
+   resultado = resultado + 1
+  $calculadora.value = $calculadora.value + 1
+ },false)
+ $two.addEventListener('click', function () {
+   resultado = resultado + 2
+   $calculadora.value = $calculadora.value + 2
+ }, false)
+
+  $three.addEventListener('click', function () {
+    resultado = resultado + 3
+    $calculadora.value = $calculadora.value + 3
+  }, false)
+   $four.addEventListener('click',function () {
+     resultado = resultado + 4
+  $calculadora.value = $calculadora.value + 4
+ },false)
+ $five.addEventListener('click', function () {
+   resultado = resultado + 5
+   $calculadora.value = $calculadora.value + 5
+ }, false)
+  $six.addEventListener('click',function () {
+    resultado = resultado + 6
+  $calculadora.value = $calculadora.value + 6
+ },false)
+ $seven.addEventListener('click', function () {
+   resultado = resultado + 7
+   $calculadora.value = $calculadora.value + 7
+ }, false)
+ $eigth.addEventListener('click', function () {
+   resultado = resultado + 8
+   $calculadora.value = $calculadora.value + 8
+ }, false)
+ $nine.addEventListener('click', function () {
+   resultado = resultado + 9
+   $calculadora.value = $calculadora.value + 9
+ }, false)
+
+ $plus.addEventListener('click', function () {
+   $calculadora.value = $calculadora.value + "+"
+ }, false)
+
+  $equal.addEventListener('click', function () {
+    console.log(+resultado);
+
+
+  }, false)
+
+
+
+
+
+
+
+  })(window, document)
+
