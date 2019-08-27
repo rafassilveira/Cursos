@@ -25,27 +25,41 @@ input;
 */
 
 (function (win,doc) {
+	'use strict'
 
+//Criando variaveis para os botoes e visor	
  var $visor = doc.querySelector('[data-js="visor"]');
- var $buttonNumber = doc.querySelectorAll('[data-js="button-number"]');
+ var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
+ var $buttonOp = doc.querySelectorAll('[data-js="button-op"]');
+ var dig ="";
+ var operator;
+
+//
+Array.prototype.forEach.call($buttonNumbers,function(button){
+	button.addEventListener('click',function(){
+		dig = dig + button.value
+		$visor.value = $visor.value + button.value
+	},false)
+	
+})
+Array.prototype.forEach.call($buttonOp,function(op){
+	op.addEventListener('click',function(){
+		operator = op.value;
+		$visor.value = $visor.value + op.value
+		
+	},false)
+	
+})
+	
 
 
 
 
 
- $buttonNumber.addEventListener('click', function () {
-
-   console.log($$buttonNumber);
-
-
-
-  },false)
 
 
 
 
 
-
-
-  })(window, document)
+})(window, document);
 
