@@ -26,31 +26,75 @@ input;
 
 (function (win,doc) {
 	'use strict'
+//Pegar os botões e passar para a variável
+var $visor = document.querySelector('[data-js="visor"]');
+var $buttonsNumbers = document.querySelectorAll('[data-js="button-number"]');
+var $buttonsOperations = document.querySelectorAll(
+  '[data-js="button-operation"]');
+var $buttonCE = document.querySelector('[data-js="button-ce"]');
+var $buttonEqual = document.querySelector('[data-js="button-equal"]');
 
-//Criando variaveis para os botoes e visor	
- var $visor = doc.querySelector('[data-js="visor"]');
- var $buttonNumbers = doc.querySelectorAll('[data-js="button-number"]');
- var $buttonOp = doc.querySelectorAll('[data-js="button-op"]');
- var dig ="";
- var operator;
+// Enganar o javascirpt dizendo que é uma array e passar o forEach nos elementos
+// depois add um evento de click
+Array.prototype.forEach.call($buttonsNumbers, function (button) {
+  button.addEventListener('click', handleClickNumber, false);
+});
+Array.prototype.forEach.call($buttonsOperations, function (button) {
+  button.addEventListener('click', handleClickOperation, false);
+});
+$buttonCE.addEventListener('click', handleClickCE, false);
+$buttonEqual.addEventListener('click', handleClickEqual, false);
 
-//
-Array.prototype.forEach.call($buttonNumbers,function(button){
-	button.addEventListener('click',function(){
-		dig = dig + button.value
-		$visor.value = $visor.value + button.value
-	},false)
-	
-})
-Array.prototype.forEach.call($buttonOp,function(op){
-	op.addEventListener('click',function(){
-		operator = op.value;
-		$visor.value = $visor.value + op.value
-		
-	},false)
-	
-})
-	
+function handleClickNumber() {
+  $visor.value += this.value;
+}
+
+function handleClickOperation() {
+  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+  $visor.value += this.value;
+}
+
+function handleClickCE() {
+  $visor.value = 0;
+}
+
+function isLastItemAnOperation(number) {
+  var operations = ['+', '-', 'x', '÷'];
+  var lastItem = number.split('').pop();
+  return operations.some(function (operator) {
+    return operator === lastItem;
+  });
+}
+
+function removeLastItemIfItIsAnOperator(number) {
+  if (isLastItemAnOperation(number)) {
+    return number.slice(0, -1);
+  }
+  return number;
+}
+
+function handleClickEqual() {
+  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
+  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+  $visor.value = allValues.reduce(function (accumulated, actual) {
+    var firstValue = accumulated.slice(0, -1);
+    var operator = accumulated.split('').pop();
+    var lastValue = removeLastItemIfItIsAnOperator(actual);
+    var lastOperator = isLastItemAnOperation(actual) ? actual.split('')
+    .pop() : '';
+    switch (operator) {
+      case '+':
+        return (Number(firstValue) + Number(lastValue)) + lastOperator;
+      case '-':
+        return (Number(firstValue) - Number(lastValue)) + lastOperator;
+      case 'x':
+        return (Number(firstValue) * Number(lastValue)) + lastOperator;
+      case '÷':
+        return (Number(firstValue) / Number(lastValue)) + lastOperator;
+    }
+  });
+}
+
 
 
 
@@ -62,4 +106,6 @@ Array.prototype.forEach.call($buttonOp,function(op){
 
 
 })(window, document);
+
+
 
