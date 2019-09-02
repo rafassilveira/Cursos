@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>CEP</title>
 </head>
 <body>
-  <a data-js="link" href="">Link 1</a>
-  <a data-js="link" href="">Link 2</a>
-
-  <script src="challenge-28.js"></script>
+ <form>
+	<input type="text" data-js="input-cep">
+	 <button type='submit' data-js="submit">Consultar CEP </button>
+ </form>
+	
+ <div data-js="cep-info">
+	 <p>Logradouro:<span data-js="Logradouro"></span> </p>
+	 <p>Bairro: <span data-js="Bairro"></span></p>
+	 <p>Estado: <span data-js="Estado"></span></p>
+	 <p>Cidade: <span data-js="Cidade"></span></p>
+	 <p>CEP: <span data-js="CEP"></span></p>
+	</div>
+  <script src="ninja.js"></script>
 </body>
 </html>
