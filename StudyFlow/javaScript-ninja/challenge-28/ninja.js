@@ -12,7 +12,7 @@ Enviar para o servidor
   ajax.send(<data>)
   	ajax.send() 
 Para manipular dados
-
+c
 Evento
  //verifica quando o estado mudou
   ajax.onreadystatechange = function(){
@@ -34,22 +34,24 @@ Http Status
 */
 (function(){
 'use strict'
- ajax.open('GET', '/data/data.json')
- ajax.send();	
+  var ajax = new XMLHttpRequest()
+  console.log(ajax.readyState);
 
- console.log('Carregando...')	
+ ajax.open('GET', 'http://apps.widenet.com.br/busca-cep/api/cep.json',{ code: cep_code })
+ ajax.send();
+
+ console.log('Carregando...')
  ajax.addEventListener('readystatechange',function(){
- if(isRequestOk){
+ if(isRequestOk()){
 	var data =JSON.parse(ajax.responseText);
-	console.log('Deu tudo Certo', data.message);
+	console.log('Deu tudo Certo', data.code);
   }else{
 	 console.log('Deu Problema')
-	 }	
+	 }
   console.log('Teste', ajax.readyState,ajax.status)
   },false)
 
 function isRequestOk(){
-	return ajax.status === 200 && ajax.readyState ===4
+	return ajax.readyState === 4 && ajax.status === 200;
 }
 })()
- 
