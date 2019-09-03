@@ -100,14 +100,45 @@
    };
 	   
    	
-	var dom = new DOM();
-  	console.log(dom.isNull(null))
+var $formCep = new DOM ('[data-js="form-cep"]')
+$formCep.on('submit',handleSubmitFormCep);
+var $inputCep = new DOM ('[data-js="input-cep"]')
+var ajax = new XMLHttpRequest();
 
+function handleSubmitFormCep(event){
+ event.preventDefault();
+ console.log($inputCep.get()[0].value)	
+ console.log("Submit Form")	
+ var url =getUrl();
+ ajax.open ('Get',url)
+ ajax.send()
+ ajax.addEventListener("readystatechange", handleReadyStateChange);
+	
+}
+	
+function getUrl() {
+    return 'http://apps.widenet.com.br/busca-cep/api/cep/<cepCode>.json'.replace(
+      '<cepCode>',
+      $inputCep.get()[0].value.replace(/\D+/g, '')
+    );
+  }
 
-	var $a = new DOM ('[data-js="link"]')
-	$a.filter(function(item){
-		console.log(item.firstChild.nodeValue=="Link 1")//true
-	})
+function handleReadyStateChange (){
+	if(isResquestOk){
+	  fillCEPFields(); 	 	
+	} 
+	
+}
+
+function isResquestOk(){
+	return	ajax.status ===1;
+}		
+
+function fillCEPFields(){
+var data = JSON.parse(ajax.responseText);
+}	
+	
+	
 })();
 
 
