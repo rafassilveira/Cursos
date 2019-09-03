@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-		Empresa:<span data-js="empresa" type="text"></span>
-	</div>
-    <div>
-		Telefone:<span data-js="telefone" type="text"></span>
-	</div>
+  <header>
+     <div>
+       Empresa:<span data-js="empresa" type="text"></span>
+     </div>
+     <div>
+       Telefone:<span data-js="telefone" type="text"></span>
+     </div>
+  </header>
+
     <form data-js="form" action="">
+       <p data-js="img">Imagem do carro:<input type="text"></p>
        <p data-js="nome">Nome:<input type="text"></p>
        <p data-js="marca">marca/modelo:<input type="text"></p>
        <p data-js="ano">Ano:<input type="text"></p>
@@ -21,11 +25,23 @@
        <button data-js="button" type="submit">Cadastrar</button>
 
     </form>
-	
-	
-	
-	
+
+    <table>
+      <thead>
+        <tr>
+          <th>Imagem do carro </th>
+          <th>Marca</th>
+          <th>Ano </th>
+          <th>placa</th>
+          <th>Cor </th>
+        </tr>
+      </thead>
+    </table>
+
+
+
+
    <script src="dom.js"></script>
-   <script src="challenge-29.js"></script>     
+   <script src="challenge-29.js"></script>
 </body>
 </html>

@@ -34,31 +34,31 @@
   E aqui nesse arquivo, faça a lógica para cadastrar os carros, em um módulo
   que será nomeado de "app".
   */
-	
+
 function app(){
-	
+
 	var $empresa = new DOM('[data-js="empresa"]')
 	var $telefone = new DOM('[data-js=telefone]')
 	var ajax = new XMLHttpRequest();
-	
+
 	ajax.open('GET','/company.json')
 	ajax.send()
 	ajax.addEventListener("readystatechange", handleReadyStateChange)
-	
+
 	function handleReadyStateChange(){
 		if(isResquestOk){
-			fillEmpresaTel()		
-			
+			fillEmpresaTel()
+
 		}
-		
+
 	}
-	
+
 	function fillEmpresaTel(){
 		var data =JSON.parse(ajax.responseText);
 		console.log('dados', data)
 		$empresa.get()[0].textContent = data.name;
 	}
-	
+
 	function isResquestOk(){
 		return ajax.status ===200 && ajax.readyState===4;
 	}
@@ -66,6 +66,10 @@ function app(){
 }
 
 
-
-app()
+return {
+  init: function () {
+    console.log('app init');
+  }
+}
+app().init();
 })(window.DOM);

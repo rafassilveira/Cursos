@@ -4,6 +4,28 @@
 	  this.element = document.querySelectorAll(element)
 	}
 
+  	DOM.isArray = function isArray(param) {
+  	  return Object.prototype.toString.call(param) === '[object Array]';
+  	}
+  	DOM.isNumber = function isNumber(param) {
+  	  return Object.prototype.toString.call(param) === '[object Number]';
+  	}
+  	DOM.isFunction = function isFunction(param) {
+  	  return Object.prototype.toString.call(param) === '[object Function]';
+  	}
+  	DOM.isString = function isString(param) {
+  	  return Object.prototype.toString.call(param) === '[object String]';
+  	}
+  	DOM.isObject = function isObject(param) {
+  	  return Object.prototype.toString.call(param) === '[object Object]';
+  	}
+  	DOM.isBoolean = function isBoolean(param) {
+  	  return Object.prototype.toString.call(param) === '[object Boolean]';
+  	}
+  	DOM.isNull = function isNull(param) {
+  	  return Object.prototype.toString.call(param) === '[object Null]' ||
+  	    Object.prototype.toString.call(param) === '[object Undefined]';
+  	};
 
 	DOM.prototype.on = function on(eventType, callback) {
 	  Array.prototype.forEach.call(this.element, function (element) {
@@ -44,31 +66,7 @@
 	DOM.prototype.some = function some() {
 	  Array.prototype.some.apply(this.element, arguments)
 	}
-	/*-isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
-	O método isNull deve retornar `true`
-	se o valor
-	for null ou undefined.*/
-	DOM.prototype.isArray = function isArray(param) {
-	  return Object.prototype.toString.call(param) === '[object Array]';
-	}
-	DOM.prototype.isNumber = function isNumber(param) {
-	  return Object.prototype.toString.call(param) === '[object Number]';
-	}
-	DOM.prototype.isFunction = function isFunction(param) {
-	  return Object.prototype.toString.call(param) === '[object Function]';
-	}
-	DOM.prototype.isString = function isString(param) {
-	  return Object.prototype.toString.call(param) === '[object String]';
-	}
-	DOM.prototype.isObject = function isObject(param) {
-	  return Object.prototype.toString.call(param) === '[object Object]';
-	}
-	DOM.prototype.isBoolean = function isBoolean(param) {
-	  return Object.prototype.toString.call(param) === '[object Boolean]';
-	}
-	DOM.prototype.isNull = function isNull(param) {
-	  return Object.prototype.toString.call(param) === '[object Null]' ||
-	    Object.prototype.toString.call(param) === '[object Undefined]';
-	};
+
+
   window.DOM = DOM;
 })(document)
