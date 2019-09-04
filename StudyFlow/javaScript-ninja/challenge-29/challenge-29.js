@@ -36,40 +36,27 @@
   */
 
 function app(){
-
-	var $empresa = new DOM('[data-js="empresa"]')
-	var $telefone = new DOM('[data-js=telefone]')
-	var ajax = new XMLHttpRequest();
-
-	ajax.open('GET','/company.json')
-	ajax.send()
-	ajax.addEventListener("readystatechange", handleReadyStateChange)
-
-	function handleReadyStateChange(){
-		if(isResquestOk){
-			fillEmpresaTel()
-
-		}
-
-	}
-
-	function fillEmpresaTel(){
-		var data =JSON.parse(ajax.responseText);
-		console.log('dados', data)
-		$empresa.get()[0].textContent = data.name;
-	}
-
-	function isResquestOk(){
-		return ajax.status ===200 && ajax.readyState===4;
-	}
-
-}
-
-
 return {
   init: function () {
     console.log('app init');
+    this.companyInfo();
+  },
+  companyInfo: function companyInfo(){
+    console.log("company info")
+    var ajax = new XMLHttpRequest();
+    //True para chamar de forma assicrona
+    ajax.open('GET','/company.json', true)
+    ajax.send();
+    // Quando o this é chamado junto com um evento(addEventListener) o this
+    //é o proprio obejto que está sendo chamado(ajax)
+    ajax.addEventListener('onreadystatechange',this.getCompanyInfo,false);
+  },
+
+  getCompanyInfo: function getCompanyInfo() {
+    if(this.readyState===4 && this.status===200)
+    console.log(this.responseText)
   }
+ }
 }
 app().init();
 })(window.DOM);
