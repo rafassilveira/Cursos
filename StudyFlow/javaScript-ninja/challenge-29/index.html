@@ -9,19 +9,39 @@
 <body>
   <header>
      <div>
-       Empresa:<span data-js="empresa" type="text"></span>
+       Empresa:<span data-js="company-name" type="text"></span>
      </div>
      <div>
-       Telefone:<span data-js="telefone" type="text"></span>
+       Telefone:<span data-js="company-phone" type="text"></span>
      </div>
   </header>
 
-    <form data-js="form" action="">
-       <p data-js="img">Imagem do carro:<input type="text"></p>
-       <p data-js="nome">Nome:<input type="text"></p>
-       <p data-js="marca">marca/modelo:<input type="text"></p>
-       <p data-js="ano">Ano:<input type="text"></p>
-       <p data-js="cor">cor:<input type="text"></p>
+    <form data-js="form-register" action="/">
+		<ul>
+			<li>
+				<label>Imagem do carro:</label>
+				<input type="url" data-js="image">
+			</li>
+			
+			<li>
+				<label>placa</label>
+				<input type="text"data-js="plate">
+			</li>
+			<li>
+				<label>marca/modelo</label>
+				<input type="text"data-js="brand-model">
+			</li>
+			<li>
+				<label>Ano</label>
+				<input type="text"data-js="year">
+			</li>
+			<li>
+				<label>cor</label>
+				<input type="text"data-js="color">
+			</li>
+		</ul>
+       
+       
        <button data-js="button" type="submit">Cadastrar</button>
 
     </form>

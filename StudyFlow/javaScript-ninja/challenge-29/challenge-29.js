@@ -41,22 +41,34 @@ return {
     console.log('app init');
     this.companyInfo();
   },
-  companyInfo: function companyInfo(){
-    console.log("company info")
+	
+  companyInfo: function companyInfo(){    
     var ajax = new XMLHttpRequest();
     //True para chamar de forma assicrona
     ajax.open('GET','/company.json', true)
     ajax.send();
     // Quando o this é chamado junto com um evento(addEventListener) o this
     //é o proprio obejto que está sendo chamado(ajax)
-    ajax.addEventListener('onreadystatechange',this.getCompanyInfo,false);
+    ajax.addEventListener('readystatechange',this.getCompanyInfo,false);
   },
 
   getCompanyInfo: function getCompanyInfo() {
-    if(this.readyState===4 && this.status===200)
-    console.log(this.responseText)
+    if(!app().isReady.call(this))
+		return;
+	  
+    var data = JSON.parse(this.responseText);
+	  console.log(data)
+	var $companyName = new DOM('[data-js="company-name]')
+	var $companyPhone = new DOM('[data-js="company-phone"]')
+	$companyName.get().textContent = data.name;
+	$companyPhone.get().textContent = data.phone;
+  },
+	isReady: function isReady() {
+	return this.readyState===4 && this.status===200;
+	}  
   }
- }
 }
+ 
 app().init();
+
 })(window.DOM);
