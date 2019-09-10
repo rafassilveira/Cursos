@@ -54,4 +54,6 @@ Http Status
 function isRequestOk(){
 	return ajax.readyState === 4 && ajax.status === 200;
 }
+	
+	
 })()
