@@ -40,7 +40,7 @@ return {
   init: function () {
     console.log('app init');
     this.companyInfo();
-	this.initEvents();  
+	this.initEvents();
   },
   initEvents: function initEvents(){
 		$('[data-js="form-register"]').on('submit', this.handleSubmit);
@@ -49,7 +49,7 @@ return {
 	  e.preventDefault();
 	  var $tableCar =$('[data-js="table-car"]').get();
 	  $tableCar.appendChild(app.createNewCar());
-	  
+
   },
   createNewCar: function createNewCar(){
 	  var $fragment = document.createDocumentFragment();
@@ -60,28 +60,28 @@ return {
 	  var $tdYear = document.createElement('td')
 	  var $tdPlate = document.createElement('td')
 	  var $tdColor = document.createElement('td')
-	  
+
 	  $image.setAttribute =$('[data-js="image"]').get().value
 	  $tdImage.appendChild($image)
-	  
+
 	  $tdImage.textContent=$('[data-js="image"]').get().value
-	  $tdPlate.textContent=$('[data-js="plate"]').get().value	  
+	  $tdPlate.textContent=$('[data-js="plate"]').get().value
 	  $tdBrand.textContent=$('[data-js="brand-model"]').get().value
-	  $tdYear.textContent=$('[data-js="year"]').get().value	  
+	  $tdYear.textContent=$('[data-js="year"]').get().value
 	  $tdColor.textContent=$('[data-js="color"]').get().value
-	  
+
 	  $tr.appendChild($tdImage)
 	  $tr.appendChild($tdBrand)
 	  $tr.appendChild($tdYear)
 	  $tr.appendChild($tdPlate)
 	  $tr.appendChild($tdColor)
-	  
-	  
+
+
 	  return $fragment.appendChild($tr);
-	  
-	  
+
+
   },
-  companyInfo: function companyInfo(){    
+  companyInfo: function companyInfo(){
     var ajax = new XMLHttpRequest();
     //True para chamar de forma assicrona
     ajax.open('GET','/company.json', true)
@@ -94,19 +94,19 @@ return {
   getCompanyInfo: function getCompanyInfo() {
     if(!app.isReady.call(this))
 		return;
-	  
-    var data = JSON.parse(this.responseText);	  
-	var $companyName = $('[data-js="company-name"]').get();	
+
+  var data = JSON.parse(this.responseText);
+	var $companyName = $('[data-js="company-name"]').get();
 	var $companyPhone = $('[data-js="company-phone"]').get();
 	$companyName.textContent = data.name;
 	$companyPhone.textContent = data.phone;
   },
 	isReady: function isReady() {
 	return this.readyState===4 && this.status===200;
-	}  
+	}
   }
 })();
- 
+
 app.init();
 
 })(window.DOM);
