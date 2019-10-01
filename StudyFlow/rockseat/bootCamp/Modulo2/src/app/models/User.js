@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   })
+  //Criando novos métodos, User.prototype.....
+  //Devido ao escopo this, nao podemos usar arrow function
+  //Criamos um função que compara o password digitado com
+  //o password do bcrypt
   User.prototype.checkPassword = function (password) {
     return bcrypt.compare(password, this.password_hash)
   }
