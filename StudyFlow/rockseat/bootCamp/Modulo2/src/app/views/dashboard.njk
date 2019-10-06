@@ -1,8 +1,27 @@
 {% extends "_layouts/default.njk" %}
 
 {% block body %}
-<h1>Olá , {{ user.name }} </h1>
-<a href="/app/logout">sair</a>
+  <div class="content">
+    <strong> Olá, {{user.name}}</strong>
+    <p>Inicie um agendamento escolhendo um profissional abaixo:</p>
+
+    <ul class="providers">
+    <!-- Esse providers está vindo o DashboardController.js-->
+      {% for provider in providers %}
+        <!--Irá mostrar todos os providers -->
+        <li class="provider">
+          <div>
+            <img src="/files/{{provider.avatar}}"/>
+            <strong>{{provider.name}}</strong>
+           <!--Agendando com um provider -->
+          </div>
+          <a href="">+</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <!--Botão de logout -->
+    <a href="/app/logout" class="logout">sair</a>
+  </div>
 
 {% endblock %}
 

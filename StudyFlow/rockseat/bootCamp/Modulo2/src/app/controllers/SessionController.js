@@ -18,11 +18,11 @@ class SessionController {
       }
     })
     if (!user) {
-      req.flash('error','usuário não encontrado')
+      req.flash('error', 'usuário não encontrado')
       return res.redirect('/')
-  }
+    }
     if (!await user.checkPassword(password)) {
-      req.flash('error','Senha incorreta')
+      req.flash('error', 'Senha incorreta')
       return res.redirect('/')
     }
     req.session.user = user;
@@ -30,7 +30,7 @@ class SessionController {
   }
   destroy(req, res) {
     req.session.destroy(() => {
-      res.clearCokkie('root')
+      res.clearCookie('root')
       return res.redirect('/')
     })
   }

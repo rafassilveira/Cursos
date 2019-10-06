@@ -1,4 +1,3 @@
-
 const express = require('express')
 const multerConfig = require('./config/multer')
 const upload = require('multer')(multerConfig)
@@ -10,6 +9,8 @@ const guestMiddleware = require('./app/middlewares/guest')
 
 const UserController = require('./app/controllers/UserController')
 const SessionController = require('./app/controllers/SessionController')
+const DashboardController = require('./app/controllers/DashboardController')
+const FileController = require('./app/controllers/FileController')
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash('sucess')
@@ -18,6 +19,9 @@ routes.use((req, res, next) => {
   return next()
 
 })
+//Rota generica para todo tipo de arquivo na nossa aplicação, entao
+//qualquer arquivo que esiver na psta upload poderá ser acessado pela aplicação
+routes.get('/files/:file', FileController.show)//rota file que recebe pametro :file
 routes.get('/', guestMiddleware, SessionController.create)
 routes.post('/signin', SessionController.store)
 
@@ -29,10 +33,7 @@ routes.use('/app', authMiddleware)
 
 routes.get('/app/logout', SessionController.destroy)
 
-routes.get('/app/dashboard', (req, res) => {
-  console.log(req.session.user)
-  return res.render('dashboard')
-})
+routes.get('/app/dashboard', DashboardController.index)
 
 module.exports = routes
 //
