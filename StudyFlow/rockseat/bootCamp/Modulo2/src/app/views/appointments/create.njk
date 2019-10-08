@@ -1,0 +1,42 @@
+<!-- Puxando os layouts padrão-->
+{% extends "_layouts/default.njk" %}
+
+{% block body %}
+<div class="content">
+  <strong>Agendando horário</strong>
+
+  <div class="provider">
+    <div>
+    <!-- Esse provider é a variavel definida no AppointmentController.js-->
+      <img src="/files/{{ provider.avatar }}">
+      <strong>{{ provider.name}}</strong>
+    </div>
+  </div>
+  <form action="/app/appointments/new/{{ provider.id }}" method="post">
+    <input type="text" class="flatpickr" placeholder="Escolha uma data">
+    <div id="hours">
+      <label>
+        <input type="radio" />
+        12:00
+      </label>
+      <label>
+        <input type="radio" />
+        13:00
+      </label>
+      <label>
+        <input type="radio" />
+        14:00
+      </label>
+    </div>
+
+    <button type="submit">agendar</button>
+  </form>
+</div>
+<script type="text/javascript">
+
+  flatpickr('.flatpickr', {//puxando o flatpickr pela classe
+    minDate: new Date(),// data minima, hoje é a data minima
+    dateFormat: 'd/m/Y'// formato da data
+  })
+</script>
+{% endblock %}

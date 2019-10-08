@@ -15,7 +15,8 @@
             <strong>{{provider.name}}</strong>
            <!--Agendando com um provider -->
           </div>
-          <a href="">+</a>
+          <!-- Passando um proivder especifico pela URL-->
+          <a href="/app/appointments/new/{{ provider.id}}">+</a>
         </li>
       {% endfor %}
     </ul>

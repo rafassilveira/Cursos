@@ -23,7 +23,7 @@ class SessionController {
     }
     if (!await user.checkPassword(password)) {
       req.flash('error', 'Senha incorreta')
-      return res.redirect('/')
+    return res.redirect('/')
     }
     req.session.user = user;
     return res.redirect('/app/dashboard')
