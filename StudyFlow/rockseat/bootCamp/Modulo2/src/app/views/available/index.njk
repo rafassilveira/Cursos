@@ -1,7 +1,10 @@
+<!-- -->
 {% for hour in available %}
+<!--O for ="time-{{ hour.time}} deixa o usuario clicar no container da data, -->
   <label class= "{% if hour.available === false %}disabled{% endif %}" for ="time-{{ hour.time}}">
+    <!--Mostrar o radio so se o horario esta disponivel -->
     {% if hour.available === true %}
-      <input input="radio" name="date" value="{{hour.value}}"id="time-{{ hour.time}}"/>
+      <input type="radio" name="date" value="{{hour.value}}"id="time-{{ hour.time}}"/>
     {% endif %}
     {{ hour.time }}
   </label>

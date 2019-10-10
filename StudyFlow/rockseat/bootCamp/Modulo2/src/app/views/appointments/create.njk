@@ -26,7 +26,11 @@
   flatpickr('.flatpickr', {//puxando o flatpickr pela classe
     minDate: new Date(),// data minima, hoje é a data minima
     dateFormat: 'd/m/Y',// formato da data
+    // onchane: Quando tiver alguma modificação dispara a função
     onChange:function(date){
+      //fetch é uma api do navegador para fazer requisições
+      //fetch(`path`)....
+      //data[0] porque o flatpicker aceita mais de uma data e só queremos a primeira
       fetch(`/app/available/{{provider.id}}?date=${date[0].getTime()}`).then(function(response){
         response.text().then(function(html){
           document.getElementById('hours').innerHTML =html
