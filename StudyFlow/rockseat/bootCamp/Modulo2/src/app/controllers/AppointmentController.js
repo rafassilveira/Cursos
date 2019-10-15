@@ -1,5 +1,8 @@
 //Importando Usuario
-const {  User} = require('../models')
+const {
+  User,
+  Appointment
+} = require('../models')
 
 class AppointmentController {
   async create(req, res) {
@@ -8,6 +11,27 @@ class AppointmentController {
     return res.render('appointments/create', {
       provider
     })
+  }
+  async store(req, res) {
+    // id do usuario que esta logado, para usar como ele quefez o agendamento
+    const {
+      id
+    } = req.session.user
+    //pegar o provider de dentro dos parametros das rotas, para saber quem vai fazer o serviço
+    const {
+      provider
+    } = req.params
+    //input que agente preenchee nos botao da radio la no /available/index.ja
+    const {
+      date
+    } = req.body
+
+    await Appointment.create({
+      user_id: id,
+      provider_id: provider,
+      date
+    })
+    return res.redirect('/app/dashboard')
   }
 }
 

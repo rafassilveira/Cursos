@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="sun"></div>
+  <div class="grass"></div>
+</body>
+<style>
+  body {
+    margin: 0 0 0 0;
+    background-color: #2c3e50;
+    animation: sky 5s linear 0s infinite forwards;
+
+  }
+
+  .grass {
+    background: green;
+    height: 600px;
+    width: 100%;
+    position: absolute;
+  }
+
+  .sun {
+    background: #f1c40f;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation-name: sun;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+
+
+  }
+
+  @keyframes sun {
+    0% {
+      background-color: orange;
+      transform: translate(-200px, 100px);
+    }
+
+    25% {
+      background: #f1c40f;
+      transform: translate(500px, 50px);
+
+    }
+
+    50% {
+      background: #f1c40f;
+      transform: translate(1000px, -10px);
+    }
+
+    75% {
+      background: #f1c40f;
+      transform: translate(1500px, 50px);
+
+    }
+
+    100% {
+      background-color: red;
+      transform: translate(2000px, 100px);
+
+    }
+
+  }
+
+  @keyframes sky {
+    0% {
+      background-color: #2c3e50;
+    }
+
+    10% {
+      background-color: pink;
+    }
+
+    30% {
+      background-color: rgb(6, 126, 201);
+    }
+
+    70% {
+      background-color: rgb(6, 126, 201);
+    }
+
+    90% {
+      background-color: pink;
+
+    }
+
+    100% {
+      background-color: #2c3e50;
+    }
+  }
+</style>
+
+</html>

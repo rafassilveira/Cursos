@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     date: DataTypes.DATE // daa de inicio
   })
   Appointment.associate = models => {
-    //usamos o belongsto(), para armazenar chaves estrangeiras,em uma tabela(appointment)
+   /* //usamos o belongsto(), para armazenar chaves estrangeiras,em uma tabela(appointment)
     //O appointment pertece ao seguinte usuario
     Appointment.belongsTo(models.User, {
     //nome da chave que vai guardar esse relacionamento
@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     })
     // Quem vai fazer o serviço
     Appointment.belongsTo(models.User, {
+      foreignKey: 'provider_id'
+    })*/
+    Appointment.belongsTo(models.User, {
+      as: 'user',
+      foreignKey: 'user_id'
+    })
+    Appointment.belongsTo(models.User, {
+      as: 'provider',
       foreignKey: 'provider_id'
     })
   }

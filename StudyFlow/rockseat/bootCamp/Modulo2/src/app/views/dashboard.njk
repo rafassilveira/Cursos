@@ -20,6 +20,10 @@
         </li>
       {% endfor %}
     </ul>
+
+    {% if (user.provider === true) %}
+      <a href="/app/schedule">Meus agendamentos</a>
+    {% endif %}
     <!--Botão de logout -->
     <a href="/app/logout" class="logout">sair</a>
   </div>
