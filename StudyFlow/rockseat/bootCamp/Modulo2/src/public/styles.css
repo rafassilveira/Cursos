@@ -253,6 +253,9 @@ ul.providers {
   border: 1px solid #de6d6d;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 10px;
+  animation: error 700ms linear;
+
+
 
 }
 
@@ -309,4 +312,42 @@ ul.providers {
 
 .main-wrapper .content form button:hover {
   background: #634dac;
+}
+
+form {
+  animation-name: fade;
+  animation-duration: 1s;
+
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes error {
+  0% {
+
+    transform: translateX(0);
+
+  }
+
+  35% {
+    transform: translateX(-10%);
+  }
+
+  70% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
