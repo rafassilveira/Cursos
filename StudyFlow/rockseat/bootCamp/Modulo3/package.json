@@ -3,12 +3,16 @@
     "start": "nodemon src/index.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "mongoose": "^5.7.5"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.5",
+    "require-dir": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-autofix": "0.0.9",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
