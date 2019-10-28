@@ -19,6 +19,7 @@
     <div class="box box-7">7</div>
     <div class="box box-8">8</div>
     <div class="box box-9">9</div>
+
   </div>
 </body>
 <style>
@@ -34,7 +35,8 @@
     font-family: lato;
     font-weight: 300;
     box-sizing: border-box;
-
+    width: 60px;
+    height: 600px;
   }
 
   .box-1 {
@@ -77,8 +79,27 @@
 
   .container {
     display: flex;
-    border: 20px solid black;
-    height: 90vh;
+    border: 10px solid black;
+
+    /* Direção da flex*/
+    flex-direction: column;
+    /*
+    flex-wrap define o comportamento multlinha,
+    por padrão é o nowrap, sem quebra
+    wrap: quebra linha
+    wrap-reverse:O começoe o fim do cross axis são revertidos
+    */
+    flex-wrap: wrap;
+    /* Final da coluna ou linha*/
+    /* justify-content: flex-end; */
+    /*Centraliza*/
+    justify-content: center;
+    /* Espaços entre os elementos*/
+    /* justify-content: space-between; */
+    /* espaços nos lados ou em cima e embaixo*/
+    /* justify-content: space-around; */
+
+    height: 500px;
   }
 </style>
 
