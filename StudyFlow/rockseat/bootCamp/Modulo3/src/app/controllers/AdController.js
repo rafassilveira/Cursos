@@ -3,7 +3,39 @@ const Ad = require('../models/Ad')
 class AdController {
   async index(req, res) {
     //buscando todos os ads
-    const ads = await Ad.find()
+    const filters = {}
+    //filtro de preço max e min
+    if (req.query.price_min || req.query.price_max) {
+      filters.price = {}
+      if (req.query.price_min) {
+        //$gte => gran than => maior que
+        filters.price.$gte = req.query.price_min
+      }
+
+      if (req.query.price_max) {
+         //$lte => less than => menor que
+        filters.price.$lte = req.query.price_max
+      }
+    }
+    if (req.query.title) {
+      //usando a Regexp para verificar se palavra que o usuário está enviando
+      //está contido no titulo do anuncio, não que a palavara seja igual ao
+      //titulo
+      filters.title = new RegExp(req.query.title, 'i')//i => case insensitive
+    }
+    //trocando o find por paginate
+    //O segundo parametro do paginate é filtro que queremos buscar
+    const ads = await Ad.paginate(filters, {
+      //pagina inicial,padrão é 1, vem como query params,
+      //entao verificar se existe senão vai para 1
+      page: req.query.page || 1,
+      //itens por pagina
+      limit: 20,
+      // populate passamos o relacioanamento que queremos popular
+      populate: ['author'],
+      //ordeando os itens pela data de criação
+      sort: '-createdAt'
+    })
 
     return res.json(ads)
   }
