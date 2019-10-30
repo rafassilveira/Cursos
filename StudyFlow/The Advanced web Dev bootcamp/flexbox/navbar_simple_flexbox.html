@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NavBar</title>
+</head>
+
+<body>
+  <nav>
+    <a href=""><i class="fa fa-home"></i>Home</a>
+    <a href=""><i class="fa fa-question"></i>About</a>
+    <a href=""><i class="fa fa-phone"></i>Contact</a>
+    <a href=""><i class="fa fa-paw"></i>Dogs</a>
+  </nav>
+
+</body>
+<style>
+  @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+  @import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+  body {
+    margin: 0;
+  }
+
+  nav {
+
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+
+
+
+  }
+
+  a {
+    font-size: 40px;
+    margin: 20px;
+    color: #95a5a6;
+    font-family: raleway;
+    border-bottom: 1px solid #52c9aa;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+
+  }
+
+  a:hover {
+    color: #3498db;
+    border-bottom-color: #3498db;
+
+  }
+
+  i {
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 920px) {
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      font-size: 26px;
+      margin: 20px;
+      color: #95a5a6;
+      font-family: raleway;
+      border-bottom: 1px solid #52c9aa;
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+      nav {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #34495e;
+        width: 100%;
+        position: absolute;
+
+
+
+      }
+
+      a {
+        font-size: 26px;
+        margin: 20px;
+        color: white;
+        font-family: raleway;
+        border-bottom: 1px solid #52c9aa;
+        text-decoration: none;
+
+      }
+
+      i {
+        margin-right: 10px;
+      }
+    }
+</style>
+
+</html>

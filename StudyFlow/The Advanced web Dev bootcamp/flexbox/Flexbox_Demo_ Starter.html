@@ -35,8 +35,8 @@
     font-family: lato;
     font-weight: 300;
     box-sizing: border-box;
-    width: 60px;
-    height: 600px;
+    width: 15vw;
+
   }
 
   .box-1 {
@@ -80,9 +80,11 @@
   .container {
     display: flex;
     border: 10px solid black;
+    height: 100vh;
 
     /* Direção da flex*/
-    flex-direction: column;
+    /* flex-direction: row; */
+    /* flex-direction: column; */
     /*
     flex-wrap define o comportamento multlinha,
     por padrão é o nowrap, sem quebra
@@ -92,14 +94,33 @@
     flex-wrap: wrap;
     /* Final da coluna ou linha*/
     /* justify-content: flex-end; */
+
     /*Centraliza*/
-    justify-content: center;
+    /* justify-content: center; */
     /* Espaços entre os elementos*/
     /* justify-content: space-between; */
     /* espaços nos lados ou em cima e embaixo*/
     /* justify-content: space-around; */
 
-    height: 500px;
+    /* height: 800px; */
+
+    /*align item :define os espaços que serão distribuidos entre os itens
+    dentro do container*/
+    /* align-items: flex-start; */
+    /* align-items: baseline; */
+    /* align-items: flex-end; */
+    /* align-items: center; */
+
+    /*align-content: Espaços entres as linhas*/
+    /* align-content: flex-start; */
+    /* align-content: flex-end; */
+    /* align-content: flex-start; */
+    /* align-content: space-between;*/
+    /*align-content: space-around; */
+    /* align-content: stretch; */
+    /* align-content: center; */
+
+
   }
 </style>
 
