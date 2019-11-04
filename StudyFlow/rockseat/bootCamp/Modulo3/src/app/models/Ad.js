@@ -6,7 +6,7 @@ const mongoosePaginate = require('mongoose-paginate')
 const Ad = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
@@ -22,12 +22,12 @@ const Ad = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   createAt: {
     type: Date,
     default: Date.now
-  }
+  },
 })
 //incluindo o pagiante
 Ad.plugin(mongoosePaginate)
