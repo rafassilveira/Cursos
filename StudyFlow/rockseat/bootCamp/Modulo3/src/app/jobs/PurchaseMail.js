@@ -13,7 +13,7 @@ class PurchaseMail {
       ad,
       user,
       content
-    } = job.data// data é método dentro do job
+    } = job.data // data é método dentro do job
     await Mail.sendMail({
       from: '"Rafael Silveira" <rafaelssilveira@outlook.com>',
       to: ad.author.email,
