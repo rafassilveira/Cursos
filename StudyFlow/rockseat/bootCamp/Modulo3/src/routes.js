@@ -8,7 +8,7 @@ const authMiddleware = require('./app/middlewares/auth')
 
 const controllers = require('./app/controllers')
 const validators = require('./app/validators')
-                    
+
 
 routes.post('/users', validate(validators.User),
   handle(controllers.UserController.store)
@@ -40,5 +40,6 @@ routes.delete('/ads/:id', handle(controllers.AdController.destroy))
 
 routes.post('/purchases', validate(validators.Purchase), handle(controllers.PurchaseController.store))
 
+routes.put('/purchases/:id', handle(controllers.ApproveController.update))
 
 module.exports = routes
