@@ -1,0 +1,23 @@
+# Gatby
+
+## O que é?
+é um framework que para a produção de site muito mais rápido
+
+## Como ele fuciona?
+  => Pega um cojunto de dados vindo de csv,wordpress...
+  => Passa por graphQL
+  => Usa a componentizaçãodo React 
+  => Envia arquivos estaticos,html e js
+
+## Porque usar o GatsbyJs?
+  => Grande perfomance
+  => Segurança
+    -Por usar arquivos estaticos é mais sificil ter ataques do
+    tipo injection
+  => Boa experiência para desenvolvedores
+    -A maioria das ferramentas já são usadas demasiamente na
+    comunidade de desenvolvimento
+  => Ótima documentação, grande comunidade open source
+    -Documentação robusta e fácil de encontrar respotas
+  
+
