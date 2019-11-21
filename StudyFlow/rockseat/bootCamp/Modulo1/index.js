@@ -21,6 +21,7 @@ var users = ['Rafael', "Pamela", 'Bulma']
 
 app.get("/", (req, res) => {
   return res.render('list', {
+    
     users
   })
 });

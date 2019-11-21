@@ -1,21 +1,20 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-import {useStaticQuery, graphql} from 'gatsby'
+import {useStaticQuery, graphql} from "gatsby"
 
 import SEO from "../components/seo"
 import PostItem from '../components/PostItem'
 
 
 const IndexPage = () => {
-    const {
-      allMarkdownRemark
-    } = useStaticQuery(graphql`
+    const { allMarkdownRemark } = useStaticQuery(graphql`
     query PostList {
       allMarkdownRemark {
         edges {
           node {
             frontmatter {
+              background
               category
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
               description
@@ -40,7 +39,8 @@ const IndexPage = () => {
       },
     })=> (
        <PostItem
-       slug = "/about/"       
+       slug ="/about/"
+       background= {background}       
        category = {category}
        date = {date}
        timeToRead = {timeToRead}
