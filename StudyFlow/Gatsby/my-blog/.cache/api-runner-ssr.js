@@ -5,6 +5,9 @@ var plugins = [{
       plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-remark-images/gatsby-ssr'),
+      options: {"plugins":[],"maxWidth":960,"linkImagesToOriginal":false},
+    },{
       plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui"},
     }]

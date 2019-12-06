@@ -10,9 +10,18 @@ background: "#7AAb13"
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [adipiscing](http://google.com) eu pulvinar vel, sodales vitae dui. :thumbsup: :smile: :sparkler:
 
+<!-- Para usar o highlight, mostrar o codigo bonitinho, usaremo ```(linguagem)``` -->
 ```javascript
-a=3
-puts a
+const express = require("express");
+const app = express();
+
+
+
+app.get("/", function(req, res) {
+    res.send("<h1>Servidor rodando com ExpressJS</h1>");
+});
+
+http.createServer(express).listen(8080, () => console.log("Servidor rodando local na porta 3001"));
 ```
 
 ## Fusce a metus eu
