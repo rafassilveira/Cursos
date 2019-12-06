@@ -1,8 +1,13 @@
 import styled from "styled-components"
 // Link padrão do gatby o para otimizar e fazer o pre-load
 import { Link } from "gatsby"
+import media from "styled-media-query"
 
-export const MenuLinksWrapper = styled.nav``
+export const MenuLinksWrapper = styled.nav`
+  ${media.lessThan("large")`
+    display:none;
+  `}
+`
 
 export const MenuLinkList = styled.ul`
   font-size: 1.2rem;
