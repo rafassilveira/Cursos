@@ -1,8 +1,9 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import getThemeColor from "../../utils/getThemeCollor"
 
-import Avatar from '../Avatar'
-import * as S from './styled'
+import Avatar from "../Avatar"
+import * as S from "./styled"
 
 const Profile = () => {
   const {
@@ -20,22 +21,25 @@ const Profile = () => {
       }
     }
   `)
-    // renderizando
-    return (
+  // renderizando
+  return (
     <S.ProfileWrapper>
-      <S.ProfileLink>
-        <Avatar/>
+      <S.ProfileLink
+        to="/"
+        cover
+        direction="left"
+        bg={getThemeColor()}
+        duration={0.6}
+      >
+        <Avatar />
         <S.ProfileAuthor>
           {title}
           <S.ProfilePosition>{position}</S.ProfilePosition>
         </S.ProfileAuthor>
-        
-      </S.ProfileLink>  
+      </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
-    </S.ProfileWrapper>  
-    )
-  }
-
+    </S.ProfileWrapper>
+  )
+}
 
 export default Profile
-

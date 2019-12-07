@@ -1,7 +1,7 @@
 import styled from "styled-components"
-// Link padrão do gatby o para otimizar e fazer o pre-load
-import { Link } from "gatsby"
 import media from "styled-media-query"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 
 export const MenuLinksWrapper = styled.nav`
   ${media.lessThan("large")`
@@ -21,11 +21,11 @@ export const MenuLinksItem = styled.li`
     color: var(--highlight);
   }
 `
-export const MenuLinksLink = styled(Link)`
-  color: var(--texts);
-  text-decoration: none;
-  transition: color 0.5s;
-  &:hover {
-    color: var(--highlight);
-  }
-`
+export const MenuLinksLink = styled(AniLink)`
+         color: var(--texts);
+         text-decoration: none;
+         transition: color 0.5s;
+         &:hover {
+           color: var(--highlight);
+         }
+       `

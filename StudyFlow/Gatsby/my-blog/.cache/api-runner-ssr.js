@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-transition-link/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
@@ -9,7 +12,13 @@ var plugins = [{
       options: {"plugins":[],"maxWidth":960,"linkImagesToOriginal":false},
     },{
       plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui"},
+      options: {"plugins":[],"name":"Rafael Silveira","short_name":"Rafael Silveira","start_url":"/","background_color":"#16202c","theme_color":"#16202c","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+    },{
+      plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('D:/Git/Cursos/StudyFlow/Gatsby/my-blog/node_modules/gatsby-plugin-offline/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
