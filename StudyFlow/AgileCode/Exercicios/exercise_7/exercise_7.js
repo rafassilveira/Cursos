@@ -7,6 +7,7 @@ const database = {
   createTable(statement) {
     const regexp = /create table ([a-z]+) \((.+)\)/;
     const parsedStatement = statement.match(regexp);
+
     let [, tableName, columns] = parsedStatement;
     this.tables[tableName] = {
       columns: {},
